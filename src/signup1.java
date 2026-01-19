@@ -23,6 +23,11 @@ public class signup1 extends baseFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         enter = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        enter2 = new javax.swing.JButton();
+        enter1 = new javax.swing.JButton();
+        textLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -38,10 +43,11 @@ public class signup1 extends baseFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.SystemColor.activeCaption);
         setMinimumSize(new java.awt.Dimension(500, 400));
-        setPreferredSize(new java.awt.Dimension(500, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(0, 33, 71));
+        jPanel3.setAutoscrolls(true);
+        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel3.setMinimumSize(new java.awt.Dimension(500, 400));
         jPanel3.setPreferredSize(new java.awt.Dimension(500, 400));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,42 +57,82 @@ public class signup1 extends baseFrame {
         textLabel.setForeground(new java.awt.Color(240, 240, 240));
         textLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel.setText("Sign Up");
-        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 75, 35));
+        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 75, 35));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 170, -1));
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 170, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 170, -1));
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 170, 30));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Password:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel2.setText("Username:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
+        jLabel2.setText("Name:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        enter.setBackground(new java.awt.Color(0, 153, 51));
+        enter.setBackground(new java.awt.Color(0, 33, 71));
         enter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        enter.setForeground(new java.awt.Color(0, 33, 71));
+        enter.setForeground(new java.awt.Color(240, 240, 240));
         enter.setText("ENTER");
         enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterActionPerformed(evt);
             }
         });
-        jPanel3.add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 70, -1));
+        jPanel3.add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 70, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 380));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel3.setText("Email:");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 170, -1));
+
+        enter2.setBackground(new java.awt.Color(0, 33, 71));
+        enter2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        enter2.setForeground(new java.awt.Color(240, 240, 240));
+        enter2.setText("BACK");
+        enter2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enter2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(enter2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 70, -1));
+
+        enter1.setBackground(new java.awt.Color(0, 33, 71));
+        enter1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        enter1.setForeground(new java.awt.Color(240, 240, 240));
+        enter1.setText("Proceed to Log In");
+        enter1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enter1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(enter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 170, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 280, 230));
+
+        textLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo.png"))); // NOI18N
+        getContentPane().add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 80, 310, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -104,6 +150,20 @@ public class signup1 extends baseFrame {
         loginFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_enterActionPerformed
+
+    private void enter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter1ActionPerformed
+        Javagui javaguiFrame = new Javagui();
+        javaguiFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_enter1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void enter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enter2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,12 +202,17 @@ public class signup1 extends baseFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton enter;
+    public javax.swing.JButton enter1;
+    public javax.swing.JButton enter2;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
     public javax.swing.JTextField jTextField1;
     public javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextField3;
     public javax.swing.JLabel textLabel;
+    public javax.swing.JLabel textLabel4;
     // End of variables declaration//GEN-END:variables
 }

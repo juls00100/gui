@@ -14,36 +14,6 @@ public class Javagui extends baseFrame {
 public Javagui() {
     initComponents();
     
-    // --- LOGO INSERTION START ---
-    try {
-        // 1. Load the image from your resources folder
-        java.net.URL imgURL = getClass().getResource("/resources/logo.png");
-        
-        if (imgURL != null) {
-            javax.swing.ImageIcon icon = new javax.swing.ImageIcon(imgURL);
-            
-            // 2. SCALE: This ensures the image is exactly 60x60 regardless of the file size
-            java.awt.Image img = icon.getImage();
-            java.awt.Image scaledImg = img.getScaledInstance(60, 60, java.awt.Image.SCALE_SMOOTH);
-            
-            // 3. APPLY TO LABEL: We use the existing textLabel4 variable
-            textLabel4.setIcon(new javax.swing.ImageIcon(scaledImg));
-            textLabel4.setText(""); // Remove the "jLabel4" text
-            
-            // 4. ALIGNMENT: Center the icon inside its box
-            textLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            
-            // 5. POSITION: Force the box to be 60x60 and centered horizontally
-            // In your Absolute Layout, X=220 centers it on a 500px panel
-            textLabel4.setBounds(220, 60, 60, 60); 
-            
-        } else {
-            System.out.println("Could not find file: /resources/60.png");
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    // --- LOGO INSERTION END ---
 }
     
     @SuppressWarnings("unchecked")
@@ -68,26 +38,27 @@ public Javagui() {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         textLabel1.setBackground(new java.awt.Color(0, 33, 71));
-        textLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        textLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         textLabel1.setForeground(new java.awt.Color(197, 179, 88));
         textLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel1.setText("Welcome to Academic Evaluation System!");
         textLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(197, 179, 88)));
-        jPanel1.add(textLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 340, 34));
+        jPanel1.add(textLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 240, 34));
 
         textLabel3.setBackground(new java.awt.Color(0, 33, 71));
         textLabel3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         textLabel3.setForeground(new java.awt.Color(197, 179, 88));
         textLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textLabel3.setText("Your voice has value to us! ");
-        jPanel1.add(textLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 26, 500, 30));
+        textLabel3.setText("Where your voices are valuable.");
+        jPanel1.add(textLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 150, 30));
 
         jPanel2.setBackground(new java.awt.Color(0, 33, 71));
 
         signup1Button1.setBackground(new java.awt.Color(0, 33, 71));
-        signup1Button1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        signup1Button1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         signup1Button1.setForeground(new java.awt.Color(0, 204, 0));
         signup1Button1.setText("Sign Up");
+        signup1Button1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         signup1Button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signup1Button1ActionPerformed(evt);
@@ -95,10 +66,11 @@ public Javagui() {
         });
 
         loginButton2.setBackground(new java.awt.Color(0, 33, 71));
-        loginButton2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        loginButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         loginButton2.setForeground(new java.awt.Color(0, 204, 102));
         loginButton2.setText("Log in");
         loginButton2.setToolTipText("");
+        loginButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         loginButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButton2ActionPerformed(evt);
@@ -110,27 +82,27 @@ public Javagui() {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(signup1Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(loginButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addGap(43, 43, 43)
+                .addComponent(signup1Button1)
+                .addGap(21, 21, 21)
+                .addComponent(loginButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginButton2)
-                    .addComponent(signup1Button1))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(signup1Button1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loginButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 340, 70));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 240, 50));
 
         textLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\SONY\\OneDrive\\Documents\\NetBeansProjects\\JavaGui\\src\\resources\\logo.png")); // NOI18N
-        jPanel1.add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 70, 60));
+        textLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo.png"))); // NOI18N
+        jPanel1.add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 70, 310, 220));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 490, 340));
 
