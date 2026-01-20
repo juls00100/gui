@@ -27,6 +27,8 @@ public class signup1 extends baseFrame {
         pass = new javax.swing.JPasswordField();
         signupPanel = new javax.swing.JPanel();
         registerbuton = new javax.swing.JLabel();
+        back = new javax.swing.JPanel();
+        backlabel = new javax.swing.JLabel();
         textLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -67,17 +69,14 @@ public class signup1 extends baseFrame {
         });
         jPanel3.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 150, 30));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Password:");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setText("Name:");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("Email:");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
@@ -114,9 +113,29 @@ public class signup1 extends baseFrame {
                 registerbutonMouseClicked(evt);
             }
         });
-        signupPanel.add(registerbuton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 20));
+        signupPanel.add(registerbuton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 90, 20));
 
-        jPanel3.add(signupPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 90, 20));
+        jPanel3.add(signupPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 80, 20));
+
+        back.setBackground(new java.awt.Color(197, 179, 88));
+        back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        back.setForeground(new java.awt.Color(0, 204, 51));
+        back.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backlabel.setBackground(new java.awt.Color(0, 153, 51));
+        backlabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        backlabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        backlabel.setText("Back");
+        backlabel.setFocusable(false);
+        backlabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backlabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backlabelMouseClicked(evt);
+            }
+        });
+        back.add(backlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 20));
+
+        jPanel3.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, 20));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 270, 250));
 
@@ -157,6 +176,13 @@ public class signup1 extends baseFrame {
                     }
     }//GEN-LAST:event_registerbutonMouseClicked
 
+    private void backlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backlabelMouseClicked
+
+        Javagui javaguiFrame = new Javagui();
+        javaguiFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backlabelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -193,6 +219,8 @@ public class signup1 extends baseFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JPanel back;
+    public javax.swing.JLabel backlabel;
     public javax.swing.JTextField email;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;

@@ -80,8 +80,8 @@ public Javagui() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void proceedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_proceedMouseClicked
-        signup1 signup1Frame = new signup1();
-        signup1Frame.setVisible(true);
+        logIn loginFrame = new logIn();
+        loginFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_proceedMouseClicked
 
