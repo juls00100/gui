@@ -1,11 +1,12 @@
  
+import config.config;
 import javax.swing.*;
 public class signup1 extends baseFrame {
 
     public signup1() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -18,15 +19,14 @@ public class signup1 extends baseFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         textLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        enter = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        enter2 = new javax.swing.JButton();
-        enter1 = new javax.swing.JButton();
+        email = new javax.swing.JTextField();
+        pass = new javax.swing.JPasswordField();
+        signupPanel = new javax.swing.JPanel();
+        registerbuton = new javax.swing.JLabel();
         textLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -57,113 +57,105 @@ public class signup1 extends baseFrame {
         textLabel.setForeground(new java.awt.Color(240, 240, 240));
         textLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel.setText("Sign Up");
-        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 75, 35));
+        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 75, 35));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        name.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nameActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 170, -1));
+        jPanel3.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 150, 30));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 170, 30));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Password:");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setText("Name:");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        enter.setBackground(new java.awt.Color(0, 33, 71));
-        enter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        enter.setForeground(new java.awt.Color(240, 240, 240));
-        enter.setText("ENTER");
-        enter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterActionPerformed(evt);
-            }
-        });
-        jPanel3.add(enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 70, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("Email:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        email.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 170, -1));
+        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 150, -1));
 
-        enter2.setBackground(new java.awt.Color(0, 33, 71));
-        enter2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        enter2.setForeground(new java.awt.Color(240, 240, 240));
-        enter2.setText("BACK");
-        enter2.addActionListener(new java.awt.event.ActionListener() {
+        pass.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enter2ActionPerformed(evt);
+                passActionPerformed(evt);
             }
         });
-        jPanel3.add(enter2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 70, -1));
+        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 150, -1));
 
-        enter1.setBackground(new java.awt.Color(0, 33, 71));
-        enter1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        enter1.setForeground(new java.awt.Color(240, 240, 240));
-        enter1.setText("Proceed to Log In");
-        enter1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enter1ActionPerformed(evt);
+        signupPanel.setBackground(new java.awt.Color(0, 204, 51));
+        signupPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        signupPanel.setForeground(new java.awt.Color(0, 204, 51));
+        signupPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        registerbuton.setBackground(new java.awt.Color(0, 153, 51));
+        registerbuton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        registerbuton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        registerbuton.setText("  Register");
+        registerbuton.setFocusable(false);
+        registerbuton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        registerbuton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerbutonMouseClicked(evt);
             }
         });
-        jPanel3.add(enter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 170, -1));
+        signupPanel.add(registerbuton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 20));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 280, 230));
+        jPanel3.add(signupPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 90, 20));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 270, 250));
 
         textLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo.png"))); // NOI18N
-        getContentPane().add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 80, 310, 220));
+        getContentPane().add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 70, 310, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
-    private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
+
+    private void registerbutonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerbutonMouseClicked
+        config db = new config();
+        
+        String sql = "INSERT INTO tbl_user(name, email, pass, type, status) VALUES(?, ?, ?, ?, ?)";
+        if(db.addRecord(sql, name.getText(), email.getText(), pass.getText(), "Admin", "Pending") == 1){
+            name.setText("");
+            email.setText("");
+            pass.setText("");
+            
         logIn loginFrame = new logIn();
         loginFrame.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_enterActionPerformed
-
-    private void enter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter1ActionPerformed
-        Javagui javaguiFrame = new Javagui();
-        javaguiFrame.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_enter1ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void enter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enter2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enter2ActionPerformed
+            
+        }else{
+        JOptionPane.showMessageDialog(null, "Something Went Wrong!");
+                    }
+    }//GEN-LAST:event_registerbutonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -201,17 +193,16 @@ public class signup1 extends baseFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton enter;
-    public javax.swing.JButton enter1;
-    public javax.swing.JButton enter2;
+    public javax.swing.JTextField email;
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField3;
+    public javax.swing.JTextField name;
+    public javax.swing.JPasswordField pass;
+    public javax.swing.JLabel registerbuton;
+    public javax.swing.JPanel signupPanel;
     public javax.swing.JLabel textLabel;
     public javax.swing.JLabel textLabel4;
     // End of variables declaration//GEN-END:variables
