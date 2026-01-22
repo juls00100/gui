@@ -13,7 +13,7 @@ public class Javagui extends baseFrame {
 
 public Javagui() {
     initComponents();
-    
+    jPanel1.setOpaque(false);
 }
     
     @SuppressWarnings("unchecked")
@@ -25,7 +25,6 @@ public Javagui() {
         textLabel3 = new javax.swing.JLabel();
         proceed = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        textLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,10 +68,6 @@ public Javagui() {
         proceed.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 140, 30));
 
         jPanel1.add(proceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 190, 30));
-
-        textLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo.png"))); // NOI18N
-        jPanel1.add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 70, 310, 220));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 350));
 
@@ -126,6 +121,5 @@ public Javagui() {
     private javax.swing.JPanel proceed;
     private javax.swing.JLabel textLabel1;
     private javax.swing.JLabel textLabel3;
-    private javax.swing.JLabel textLabel4;
     // End of variables declaration//GEN-END:variables
 }

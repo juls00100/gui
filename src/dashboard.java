@@ -1,3 +1,6 @@
+
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,14 +11,17 @@
  *
  * @author juls
  */
-public class dashboard extends baseFrame {
+public class dashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form dashboard
      */
     public dashboard() {
-        initComponents();
-    }
+    initComponents();
+    setSize(1024, 768); // Or whatever size you prefer for the menu
+    setLocationRelativeTo(null);
+    getContentPane().setBackground(new Color(240, 240, 240)); // Optional: Light gray for a clean look
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,7 +36,6 @@ public class dashboard extends baseFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 33, 71));

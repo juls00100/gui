@@ -29,7 +29,6 @@ public class signup1 extends baseFrame {
         registerbuton = new javax.swing.JLabel();
         back = new javax.swing.JPanel();
         backlabel = new javax.swing.JLabel();
-        textLabel4 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -139,10 +138,6 @@ public class signup1 extends baseFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 270, 250));
 
-        textLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        textLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/logo.png"))); // NOI18N
-        getContentPane().add(textLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 70, 310, 220));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -232,6 +227,5 @@ public class signup1 extends baseFrame {
     public javax.swing.JLabel registerbuton;
     public javax.swing.JPanel signupPanel;
     public javax.swing.JLabel textLabel;
-    public javax.swing.JLabel textLabel4;
     // End of variables declaration//GEN-END:variables
 }
