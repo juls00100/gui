@@ -8,6 +8,7 @@ package config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -59,5 +60,11 @@ public int addRecord(String sql, Object... values) {
         System.out.println("Error adding record: " + e.getMessage());
         return 0;
     }
+    
+    
 }
+
+    public ResultSet getData(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

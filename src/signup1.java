@@ -19,16 +19,18 @@ public class signup1 extends baseFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         textLabel = new javax.swing.JLabel();
-        name = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
-        pass = new javax.swing.JPasswordField();
+        name = new javax.swing.JTextField();
         signupPanel = new javax.swing.JPanel();
         registerbuton = new javax.swing.JLabel();
         back = new javax.swing.JPanel();
         backlabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        pass = new javax.swing.JPasswordField();
+        type = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -58,7 +60,22 @@ public class signup1 extends baseFrame {
         textLabel.setForeground(new java.awt.Color(240, 240, 240));
         textLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel.setText("Sign Up");
-        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 75, 35));
+        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 75, 35));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel1.setText("Type of User:");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel2.setText("Name:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel3.setText("Email:");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 210, -1, 20));
 
         name.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         name.addActionListener(new java.awt.event.ActionListener() {
@@ -66,45 +83,19 @@ public class signup1 extends baseFrame {
                 nameActionPerformed(evt);
             }
         });
-        jPanel3.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 150, 30));
-
-        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel1.setText("Password:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
-
-        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel2.setText("Name:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
-
-        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel3.setText("Email:");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
-
-        email.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
-            }
-        });
-        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 150, -1));
-
-        pass.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        pass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passActionPerformed(evt);
-            }
-        });
-        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 150, -1));
+        jPanel3.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 150, -1));
 
         signupPanel.setBackground(new java.awt.Color(0, 204, 51));
         signupPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         signupPanel.setForeground(new java.awt.Color(0, 204, 51));
+        signupPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         signupPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         registerbuton.setBackground(new java.awt.Color(0, 153, 51));
         registerbuton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         registerbuton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        registerbuton.setText("  Register");
+        registerbuton.setText("Register");
+        registerbuton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         registerbuton.setFocusable(false);
         registerbuton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         registerbuton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,14 +103,13 @@ public class signup1 extends baseFrame {
                 registerbutonMouseClicked(evt);
             }
         });
-        signupPanel.add(registerbuton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 90, 20));
+        signupPanel.add(registerbuton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, -1));
 
-        jPanel3.add(signupPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 80, 20));
+        jPanel3.add(signupPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 70, 20));
 
         back.setBackground(new java.awt.Color(197, 179, 88));
         back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         back.setForeground(new java.awt.Color(0, 204, 51));
-        back.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backlabel.setBackground(new java.awt.Color(0, 153, 51));
         backlabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -132,11 +122,52 @@ public class signup1 extends baseFrame {
                 backlabelMouseClicked(evt);
             }
         });
-        back.add(backlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 20));
 
-        jPanel3.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, 20));
+        javax.swing.GroupLayout backLayout = new javax.swing.GroupLayout(back);
+        back.setLayout(backLayout);
+        backLayout.setHorizontalGroup(
+            backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(backlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+        );
+        backLayout.setVerticalGroup(
+            backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 270, 250));
+        jPanel3.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 330, 70, 20));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel4.setText("Password:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, -1));
+
+        pass.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passActionPerformed(evt);
+            }
+        });
+        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 150, -1));
+
+        type.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                typeActionPerformed(evt);
+            }
+        });
+        jPanel3.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 150, -1));
+
+        email.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
+        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, 150, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,22 +176,17 @@ public class signup1 extends baseFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passActionPerformed
-
     private void registerbutonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerbutonMouseClicked
-        config db = new config();
+        config con = new config();
         
-        String sql = "INSERT INTO tbl_user(name, email, pass, type, status) VALUES(?, ?, ?, ?, ?)";
-        if(db.addRecord(sql, name.getText(), email.getText(), pass.getText(), "Admin", "Pending") == 1){
+        String sql = "INSERT INTO tbl_user(name, u_email, u_pass, u_type, u_status) VALUES(?, ?, ?, ?, ?)";
+        
+        if(con.addRecord(sql, name.getText(), email.getText() , pass.getText(), type.getText(), "Pending") == 1){
+            JOptionPane.showMessageDialog(null, "Registered Successfully! Please wait for Admin approval.");
             name.setText("");
             email.setText("");
             pass.setText("");
+            type.setText("");
             
         logIn loginFrame = new logIn();
         loginFrame.setVisible(true);
@@ -177,6 +203,18 @@ public class signup1 extends baseFrame {
         javaguiFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backlabelMouseClicked
+
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passActionPerformed
+
+    private void typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_typeActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,6 +258,7 @@ public class signup1 extends baseFrame {
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel3;
     public javax.swing.JTextField name;
@@ -227,5 +266,6 @@ public class signup1 extends baseFrame {
     public javax.swing.JLabel registerbuton;
     public javax.swing.JPanel signupPanel;
     public javax.swing.JLabel textLabel;
+    public javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
 }

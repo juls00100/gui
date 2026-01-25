@@ -1,4 +1,5 @@
  
+import config.config;
 import javax.swing.*;
 public class logIn extends baseFrame {
 
@@ -53,29 +54,29 @@ public class logIn extends baseFrame {
         textLabel.setForeground(new java.awt.Color(240, 240, 240));
         textLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel.setText("Log In");
-        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 75, 35));
+        jPanel3.add(textLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 75, 35));
 
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
             }
         });
-        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 170, -1));
+        jPanel3.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 170, -1));
 
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
             }
         });
-        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 170, -1));
+        jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 170, -1));
 
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Password:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setText("Email:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
         back.setBackground(new java.awt.Color(197, 179, 88));
         back.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -93,9 +94,9 @@ public class logIn extends baseFrame {
                 backlabelMouseClicked(evt);
             }
         });
-        back.add(backlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 20));
+        back.add(backlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, -1));
 
-        jPanel3.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 60, 20));
+        jPanel3.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 50, 20));
 
         Login.setBackground(new java.awt.Color(0, 204, 51));
         Login.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -115,12 +116,13 @@ public class logIn extends baseFrame {
         });
         Login.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 20));
 
-        jPanel3.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 60, -1));
+        jPanel3.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 60, -1));
 
         create.setBackground(new java.awt.Color(0, 33, 71));
         create.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         create.setForeground(new java.awt.Color(240, 240, 240));
         create.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 170, -1));
 
         create1.setBackground(new java.awt.Color(0, 153, 51));
         create1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -134,11 +136,9 @@ public class logIn extends baseFrame {
                 create1MouseClicked(evt);
             }
         });
-        create.add(create1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 20));
+        jPanel3.add(create1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 170, 20));
 
-        jPanel3.add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 170, -1));
-
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 280, 240));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,9 +160,38 @@ public class logIn extends baseFrame {
     }//GEN-LAST:event_backlabelMouseClicked
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-        dashboard dashboardFrame = new dashboard();
-        dashboardFrame.setVisible(true);
-        this.dispose();
+                                                                       
+    config db = new config();
+    String userEmail = email.getText();
+    String userPass = pass.getText();
+
+    // Query to check if the user exists and get their status
+    String query = "SELECT u_status FROM tbl_user WHERE u_email = '" + userEmail + "' AND u_pass = '" + userPass + "'";
+
+    try {
+        java.sql.ResultSet rs = db.getData(query); // Uses your config's getData
+        
+        if (rs.next()) {
+            String status = rs.getString("u_status");
+
+            if (status.equalsIgnoreCase("Pending")) {
+                // This is the validation you asked for
+                JOptionPane.showMessageDialog(null, "Your account is still Pending approval.");
+            } else {
+                // Only let them in if they are NOT Pending
+                dashboard dashboardFrame = new dashboard();
+                dashboardFrame.setVisible(true);
+                this.dispose();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Invalid Email or Password.");
+        }
+    } catch (java.sql.SQLException ex) {
+        System.out.println("Login Error: " + ex.getMessage());
+    }
+
+
+
     }//GEN-LAST:event_loginMouseClicked
 
     private void create1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create1MouseClicked

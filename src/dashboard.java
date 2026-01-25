@@ -1,4 +1,5 @@
 
+import config.config;
 import java.awt.Color;
 
 /*
@@ -11,16 +12,21 @@ import java.awt.Color;
  *
  * @author juls
  */
-public class dashboard extends javax.swing.JFrame {
+public class dashboard extends baseFrame{
 
     /**
      * Creates new form dashboard
      */
     public dashboard() {
     initComponents();
-    setSize(1024, 768); // Or whatever size you prefer for the menu
-    setLocationRelativeTo(null);
-    getContentPane().setBackground(new Color(240, 240, 240)); // Optional: Light gray for a clean look
+    
+}
+public void displayPendingUsers() {
+    config db = new config();
+    // Query to get only pending users
+    String query = "SELECT u_id, name, u_email, u_type, u_status FROM tbl_user WHERE u_status = 'Pending'";
+    
+    java.sql.ResultSet rs = db.getData(query);
 }
 
     /**
@@ -42,27 +48,27 @@ public class dashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel1.setText("Welcome, Julios!");
+        jLabel1.setText("This is Dashboard!");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(184, 184, 184)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(462, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addGap(189, 189, 189))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
+                .addContainerGap(253, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(150, 150, 150))
+                .addGap(227, 227, 227))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 503, 340));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

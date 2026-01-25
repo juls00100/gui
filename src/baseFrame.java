@@ -5,8 +5,7 @@ public class baseFrame extends JFrame {
     public baseFrame() {
         // 1. Set the Oxford Blue background color
         getContentPane().setBackground(new Color(0, 33, 71));
-        setLayout(null); 
-        setSize(1024, 768); 
+       
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); 
 

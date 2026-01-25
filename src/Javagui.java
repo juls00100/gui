@@ -41,14 +41,14 @@ public Javagui() {
         textLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel1.setText("Academic Evaluations");
         textLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(197, 179, 88)));
-        jPanel1.add(textLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 240, 40));
+        jPanel1.add(textLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 240, 40));
 
         textLabel3.setBackground(new java.awt.Color(0, 33, 71));
         textLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         textLabel3.setForeground(new java.awt.Color(197, 179, 88));
         textLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textLabel3.setText("Where your voices are valuable.");
-        jPanel1.add(textLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 190, 30));
+        jPanel1.add(textLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 190, 30));
 
         proceed.setBackground(new java.awt.Color(197, 179, 88));
         proceed.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.blue, null, null));
@@ -67,9 +67,9 @@ public Javagui() {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         proceed.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 140, 30));
 
-        jPanel1.add(proceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 190, 30));
+        jPanel1.add(proceed, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 280, 190, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 350));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
