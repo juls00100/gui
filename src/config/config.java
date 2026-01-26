@@ -64,7 +64,15 @@ public int addRecord(String sql, Object... values) {
     
 }
 
-    public ResultSet getData(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ResultSet getData(String sql) {
+    Connection con = connectDB();
+    ResultSet rs = null;
+    try {
+        PreparedStatement pstmt = con.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+    } catch (SQLException e) {
+        System.out.println("Query Error: " + e.getMessage());
     }
+    return rs;
+}
 }

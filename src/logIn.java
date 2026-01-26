@@ -1,4 +1,7 @@
  
+import dashboards.dashboard;
+import dashboards.teacherDashboard;
+import dashboards.studentDashboard;
 import config.config;
 import javax.swing.*;
 public class logIn extends baseFrame {
@@ -160,28 +163,41 @@ public class logIn extends baseFrame {
     }//GEN-LAST:event_backlabelMouseClicked
 
     private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-                                                                       
+                                                                                                     
     config db = new config();
     String userEmail = email.getText();
     String userPass = pass.getText();
 
-    // Query to check if the user exists and get their status
-    String query = "SELECT u_status FROM tbl_user WHERE u_email = '" + userEmail + "' AND u_pass = '" + userPass + "'";
+    String query = "SELECT * FROM tbl_user WHERE u_email = '" + userEmail + "' AND u_pass = '" + userPass + "'";
 
     try {
-        java.sql.ResultSet rs = db.getData(query); // Uses your config's getData
+        java.sql.ResultSet rs = db.getData(query); 
         
         if (rs.next()) {
             String status = rs.getString("u_status");
+            String type = rs.getString("u_type"); 
 
             if (status.equalsIgnoreCase("Pending")) {
-                // This is the validation you asked for
                 JOptionPane.showMessageDialog(null, "Your account is still Pending approval.");
             } else {
-                // Only let them in if they are NOT Pending
-                dashboard dashboardFrame = new dashboard();
-                dashboardFrame.setVisible(true);
-                this.dispose();
+                
+                JOptionPane.showMessageDialog(null, "Login Successful!");
+                
+                if (type.equalsIgnoreCase("Admin")) {
+                    dashboard adminDash = new dashboard(); 
+                    adminDash.setVisible(true);
+                    this.dispose();
+                } else if (type.equalsIgnoreCase("Student")) {
+                    studentDashboard studDash = new studentDashboard(); 
+                    studDash.setVisible(true);
+                    this.dispose();
+                } else if (type.equalsIgnoreCase("Teacher")) {
+                    teacherDashboard teachDash = new teacherDashboard(); 
+                    teachDash.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Account type not recognized.");
+                }
             }
         } else {
             JOptionPane.showMessageDialog(null, "Invalid Email or Password.");
@@ -189,6 +205,7 @@ public class logIn extends baseFrame {
     } catch (java.sql.SQLException ex) {
         System.out.println("Login Error: " + ex.getMessage());
     }
+
 
 
 
